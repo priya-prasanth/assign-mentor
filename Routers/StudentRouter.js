@@ -3,7 +3,7 @@ import Student from "../Models/StudentModel.js";
 
 const studentRouter = express.Router();
 
-studentRouter.get('/', async (req, res) => {
+studentRouter.get('/get-student', async (req, res) => {
     try {
         const students = await Student.find({}).populate('Mentor').exec((err, result) => {
             if (!err) {
