@@ -4,12 +4,13 @@ import Mentor from '../Models/MentorModel.js';
 
 const mentorRouter = express.Router();
 /* get all mentor details */
+
 mentorRouter.get('/get-mentor', async (req, res) => {
     try {
         const mentors = await Mentor.find();
         res.send(mentors);
     } catch (error) {
-        res.status(400).send(err); 
+        res.status(400).send(error); 
     }
 })
 
